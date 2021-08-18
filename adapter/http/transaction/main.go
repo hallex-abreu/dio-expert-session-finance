@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"time"
 
 	"github.com/hallex-abreu/dio-expert-session-finance/model/transaction"
+	"github.com/hallex-abreu/dio-expert-session-finance/util"
 )
 
 func GetTransations(w http.ResponseWriter, r *http.Request) {
@@ -18,15 +18,12 @@ func GetTransations(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-type", "application/json")
 
-	var layout = "2021-11-20T15:04:05"
-	salaryReceveide, _ := time.Parse(layout, "2022-11-20T11:04:05")
-
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
 			Title:     "Salário",
 			Amount:    1300.0,
 			Type:      0,
-			CreatedAt: salaryReceveide,
+			CreatedAt: util.StringToTime("2021-02-12T10:10:10"),
 		},
 	}
 
