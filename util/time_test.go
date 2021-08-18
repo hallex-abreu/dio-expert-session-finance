@@ -2,6 +2,7 @@ package util
 
 import "testing"
 
+//TestStringToTime Testing
 func TestStringToTime(t *testing.T) {
 	var convertedTime = StringToTime("2021-02-12T10:10:10")
 

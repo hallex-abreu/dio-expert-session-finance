@@ -5,10 +5,12 @@ import (
 	"net/http"
 )
 
+//HealthBody json
 type HealthBody struct {
 	Status string `json: "status"`
 }
 
+//Health Return Status
 func Health(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusMethodNotAllowed)

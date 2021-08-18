@@ -10,6 +10,7 @@ import (
 	"github.com/hallex-abreu/dio-expert-session-finance/util"
 )
 
+//GetTransations endpoint
 func GetTransations(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
@@ -30,6 +31,7 @@ func GetTransations(w http.ResponseWriter, r *http.Request) {
 	_ = json.NewEncoder(w).Encode(transactions)
 }
 
+//CreateTransations endpoint
 func CreateTransations(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
